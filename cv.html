@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>CV</title>
+    </head>
+    <body>
+            <style>
+                    body { background: #c7b39b; font-size:30px;}
+                  img {padding: 20px;}
+                  pre {font-size: 24px;}
+                  </style>
+        <div align="center">
+        <h1>CV</h1>
+        <img align="left" src="photo.jpg" width="550" alt="Моя фотография">
+    </div>
+    <div>
+    <h2>Dmitruk Darya</h2>
+    <h3>Contact info:</h3>
+    <p>Mobile phone: +375 29 821 63 57</p>
+    <p>E-mail:  dashanya-00@mail.ru</p>
+    <p>Besides You can contact me on different messages and social networks.
+            For example, telegram and viber <em>(+375298216357)</em> as well as Facebook <b>(Dasha Dmitruk)</b> and VKontakte <b>(Дмитрук Даша)</b></p>
+    <p></p><p></p>
+    <h3>Self-presentation:</h3>
+    <p>I’m sociable and positive, it’s easy for me to find common topics for communication with people, but at the same time I’m responsible and reliable. 
+        Know, what time-management is, so there won’t be any problems with deadlines. In many cases, I’m a team-worker, because I believe, that unity of people can bring much more benefit, if they have common aim and help each other. But if it’s necessary I’m able to take responsibility, making decisions and organizing the work by myself.
+            <p>Unfortunately, I can’t boast of great experience, but now I’m ready to learn new, develop my professional skills and become better.
+            </p>
+        </p>
+        <h3>Professional skills:</h3>
+        <ul><li>Programming in Java,  C ++; </li>
+        <li>Basic knowledge of markup languages for web-sites: HTML, CSS; </li>
+        <li>Basic knowledge of SQL;</li>
+        <li>Basic knowledge of computer networks (TCP/IP, UDP, HTTP);</li>
+        <li>Knowledge of MS Office, Adobe Photoshop.</li>
+<h3>Code examples:</h3>
+<class="1"><p><pre>import static java.lang.Thread.sleep;
+                import java.util.Scanner;
+                
+                
+                public class Main { 
+                static public double t1,t2,t3,tt5=60,tt4; 
+                static public int kol; 
+                static public double TIME; 
+                static public double max; 
+                public static void main(String[] args) { 
+                
+                System.out.print("Введите количество покупателей\n"); 
+                Scanner s1 = new Scanner(System.in); 
+                kol = s1.nextInt(); 
+                System.out.print("Введите время обслуживания одного покупателя(сек)\n"); 
+                System.out.print("КАССА 1: "); 
+                Scanner s2 = new Scanner(System.in); 
+                t1 = s2.nextDouble(); 
+                System.out.print("КАССА 2: "); 
+                Scanner s3 = new Scanner(System.in); 
+                t2 = s3.nextDouble(); 
+                System.out.print("КАССА 3: "); 
+                Scanner s4 = new Scanner(System.in); 
+                t3 = s4.nextDouble(); 
+                
+                //if(kol!=0){ 
+                //for(int i=0;i<45;i++){ 
+                
+                CashBox1 thread1 = new CashBox1(); 
+                thread1.start(); 
+                CashBox2 thread2 = new CashBox2(); 
+                thread2.start(); 
+                CashBox3 thread3 = new CashBox3(); 
+                thread3.start(); 
+                
+                
+                }
+                }
+                
+                
+                
+                
+                import java.util.logging.*;
+                
+                class CashBox1 extends Thread { 
+                static public double tt1; 
+                static public int client1; 
+                @Override 
+                
+                public void run() { 
+                while(Main.kol>0){ 
+                if(tt1!=45.0 && tt1!=100.0 && tt1!=155.0 && tt1!=210 && tt1!=265 && tt1!=320){ 
+                Main.kol--; 
+                tt1 += Main.t1; 
+                client1++; 
+                System.out.print("\nПОТОК 1 ОБСЛУЖИЛ "+client1+" ОСТАЛОСЬ "+Main.kol); 
+                try {
+                        sleep((long)(Main.t1*100));
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(CashBox2.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                else {
+                    System.out.print("\n1ЫЙ УШЁЛ НА ПЕРЕРЫВ");
+                    tt1+=10.0;
+                    try{ 
+                    sleep((long)(1000)); 
+                }catch(InterruptedException e){} 
+                } 
+                    
+                }
+                
+                
+                System.out.println("\nКасса 1: "+tt1+" мин, "+client1+" чел");
+                }
+                } 
+                
+                
+                
+                
+                import java.util.logging.*;
+                
+                class CashBox2 extends Thread { 
+                static public double tt2; 
+                static public int client2;
+                @Override 
+                
+                public void run() { 
+                while(Main.kol>0){ 
+                if(tt2!=45.0 && tt2!=100.0 && tt2!=155.0 && tt2!=210 && tt2!=265 && tt2!=320){ 
+                Main.kol--; 
+                tt2 += Main.t2; 
+                client2++; 
+                System.out.print("\nПОТОК 2 ОБСЛУЖИЛ "+client2+" ОСТАЛОСЬ "+Main.kol); 
+                try {
+                        sleep((long)(Main.t2*100));
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(CashBox2.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                else {
+                    System.out.print("\n2ОЙ УШЁЛ НА ПЕРЕРЫВ");
+                    tt2+=10.0;
+                    try{ 
+                    sleep((long)(1000)); 
+                }catch(InterruptedException e){} 
+                } 
+                    
+                }
+                
+                
+                System.out.println("\nКасса 2: "+tt2+" мин, "+client2+" чел");
+                }
+                } 
+                
+                
+                
+                
+                
+                import java.util.logging.*;
+                
+                class CashBox3 extends Thread { 
+                static public double tt3=0; 
+                static public int client3=0; 
+                @Override 
+                
+                public void run() { 
+                while(Main.kol>0){ 
+                if(tt3!=45.0 && tt3!=100.0 && tt3!=155.0 && tt3!=210 && tt3!=265 && tt3!=320){ 
+                Main.kol--; 
+                tt3 += Main.t3; 
+                client3++; 
+                System.out.print("\nПОТОК 3 ОБСЛУЖИЛ "+client3+" ОСТАЛОСЬ "+Main.kol); 
+                try {
+                        sleep((long)(Main.t3*100));
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(CashBox2.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                else {
+                    System.out.print("\n3ИЙ УШЁЛ НА ПЕРЕРЫВ");
+                    tt3+=10.0;
+                    try{ 
+                    sleep((long)(1000)); 
+                }catch(InterruptedException e){} 
+                } 
+                    
+                }
+                
+                
+                System.out.println("\nКасса 3: "+tt3+" мин, "+client3+" чел");
+                }
+                }</pre> </p></class="1">
+<h3>Experience:</h3>
+    <ul>
+        <li>creating graphic content as well as writing posts in English as a part of the internship</li>
+    <li>poster making for events in the University</li>
+<li>translating documents from Russian into Belarussian and English</li>    
+<li>representing projects and organizing different events as a part of university’s life</li>
+</ul>
+<h3>Education: incomplete higher education</h3>
+<p>2017-2021	- Belarussian State University of Informatics and Radioelectronics,economist-programmer</p>
+    <h4>Courses, internships:</h4>
+    <ul>
+        <li>2019 - SMM internship (international IT conference EMERGE)</li>
+    <li>2018 - Online Marketing Course</li>
+    <li>2015-2018 - English	courses</li>
+    </ul>
+    <h3>English - B2</h3>
+    <ul>
+        <li>I've learning English since my first form at school (2006 year). </li>
+        <li>English courses in 2015-2017</li>
+        <li>Enslish-speaking camp in Switzerland in 2016</li>
+        <li>Self-education in English (2018-2019)</li>
+    </ul>
+</div>
+        </body>
+</html>
